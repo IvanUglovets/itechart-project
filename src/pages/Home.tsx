@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import ListCountrys from "../components/ListCountrys";
+import Box from "@mui/material/Box";
 import SearchFiltersBox from "../components/SearchFiltersBox";
 import { getAllCountrys } from "../redux/thunk/getAllCountrys";
 import { useAppDispatch } from "../hooks/useAppDispatch";
@@ -14,12 +15,20 @@ const Home = () => {
   return (
     <>
       {isLoading ? (
-        <div>Loading...</div>
+        <h1
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "30px",
+          }}
+        >
+          <p>Loading...</p>
+        </h1>
       ) : (
-        <>
+        <Box component="section" mt={6} sx={{ padding: "0 40px" }}>
           <SearchFiltersBox />
           <ListCountrys />
-        </>
+        </Box>
       )}
     </>
   );

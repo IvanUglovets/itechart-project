@@ -11,9 +11,7 @@ const SearchFiltersBox = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "0 40px",
       }}
-      mt={8}
     >
       <Search />
       <SelectFilter />
