@@ -1,20 +1,25 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getOneCountry } from "./../redux/thunk/getOneCountry";
-import { useAppDispatch } from "./../hooks/useAppDispatch";
-import { useAppSelector } from "./../hooks/useAppSelector";
+import { getOneCountry } from "../redux/thunk/getOneCountry";
+import { useAppDispatch } from "../hooks/useAppDispatch";
+import { useAppSelector } from "../hooks/useAppSelector";
+import Box from "@mui/material/Box";
 
 const CountryDetail = () => {
   const { country } = useAppSelector((state) => state.detailCountrySlice);
   const dispatch = useAppDispatch();
   const { name } = useParams();
   useEffect(() => {
-    if (name) dispatch(getOneCountry(name));
-  }, [name, dispatch]);
+          dispatch(getOneCountry(name!));
+  }, [name]);
 
-  console.log(country);
-
-  return <div>{country?.name}</div>;
+    return (
+      <Box component="section" sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+        <div>
+            {country?.name}
+        </div>
+      </Box>
+  );
 };
 
 export default CountryDetail;

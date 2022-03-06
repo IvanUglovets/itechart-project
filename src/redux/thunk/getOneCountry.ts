@@ -6,7 +6,7 @@ export const getOneCountry = createAsyncThunk(
   async (name: string, thunkApi) => {
     try {
       const response = await api.get(`name/${name}?fullText=true`);
-      return response.data;
+      return response.data[0];
     } catch (e: unknown) {
       thunkApi.rejectWithValue(e);
     }

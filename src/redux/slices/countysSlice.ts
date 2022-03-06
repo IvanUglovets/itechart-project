@@ -19,9 +19,7 @@ const countrysSlice = createSlice({
   name: "countrys",
   initialState,
   reducers: {
-    // searchCountrys: (state:IStateCountrys, {payload}: PayloadAction<string>) => {
-    //   state.countrysList = state.countrysList.filter(country => country.name.toLowerCase().includes(payload.toLowerCase()))
-    // }
+
   },
   extraReducers: {
     [getAllCountrys.pending.type]: (state: IStateCountrys) => {

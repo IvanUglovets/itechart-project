@@ -4,7 +4,7 @@ import { ICountry } from "../../models/ICountry";
 
 interface IStateCountrys {
   isLoading: boolean;
-  country: ICountry | null;
+  country: null | ICountry;
   error: string | null;
 }
 
@@ -24,7 +24,7 @@ const detailCountrySlice = createSlice({
     },
     [getOneCountry.fulfilled.type]: (
       state: IStateCountrys,
-      { payload }: PayloadAction<any>
+      { payload }: PayloadAction<ICountry>
     ) => {
       state.isLoading = false;
       state.country = payload;
