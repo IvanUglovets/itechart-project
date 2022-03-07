@@ -1,13 +1,38 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
+import React, { useEffect } from "react";
+import { Box, buttonBaseClasses, Typography } from "@mui/material";
 import { useAppSelector } from "../hooks/useAppSelector";
+import { filterByCode } from "./../redux/thunk/filterByCode";
+import { useAppDispatch } from "./../hooks/useAppDispatch";
+import { useNavigate } from "react-router-dom";
 
 const LinksForCountrys = () => {
+  const history = useNavigate();
   const { country } = useAppSelector((state) => state.detailCountrySlice);
+  const { borders } = useAppSelector((state) => state.codeSlice);
+
+  console.log(borders);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (country?.borders?.length! > 0)
+      dispatch(filterByCode(country?.borders!));
+  }, [country?.borders]);
+
   return (
-    <Box>
+    <Box sx={{ width: "600px" }}>
       <Typography component="div" sx={{ fontWeight: "bold" }}>
-        Border Countries:
+        Border Countries:{" "}
+        {borders &&
+          borders.map((item) => (
+            <button
+              className="link__countrys"
+              key={item.name}
+              onClick={() => history(`/country/${item.name}`)}
+            >
+              {item.name}
+            </button>
+          ))}
       </Typography>
     </Box>
   );

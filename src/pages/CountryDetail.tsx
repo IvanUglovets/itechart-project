@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 import { getOneCountry } from "../redux/thunk/getOneCountry";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { useAppSelector } from "../hooks/useAppSelector";
-import LinksForCountrys from "../components/LinksForCountrys";
 import Box from "@mui/material/Box";
 
 const CountryDetail = () => {
@@ -59,7 +58,6 @@ const CountryDetail = () => {
         }}
       >
         <InfoDetail country={country} />
-        <LinksForCountrys />
       </Box>
     </Box>
   );

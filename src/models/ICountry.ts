@@ -26,4 +26,5 @@ export interface ICountry {
   nativeName: string;
   topLevelDomain: Array<string>;
   currencies: Array<ICurrencies>;
+  borders: Array<string>;
 }

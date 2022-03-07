@@ -1,10 +1,8 @@
-import { spawn } from "child_process";
 import React from "react";
 import { useAppSelector } from "../hooks/useAppSelector";
 
 const ListDetailSecondary = () => {
   const { country } = useAppSelector((state) => state.detailCountrySlice);
-  console.log(country);
 
   return (
     <ul className="info__list">
@@ -31,7 +29,7 @@ const ListDetailSecondary = () => {
         <span className="info-list-item-dynamic">
           {" "}
           {country?.languages.map((item) => (
-            <span key={item.name}>{item.name}</span>
+            <span key={item.name}>{item.name} </span>
           ))}
         </span>
       </li>
