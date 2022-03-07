@@ -3,6 +3,12 @@ export interface ILanguege {
   nativeName: string;
 }
 
+export interface ICurrencies {
+  code: string;
+  name: string;
+  symbol: string;
+}
+
 export interface ICountry {
   area: number;
   capital: string;
@@ -17,4 +23,7 @@ export interface ICountry {
   flag: string;
   flags: { svg: string; png: string };
   cioc: string;
+  nativeName: string;
+  topLevelDomain: Array<string>;
+  currencies: Array<ICurrencies>;
 }
