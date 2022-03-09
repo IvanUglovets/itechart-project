@@ -14,8 +14,6 @@ export const InfoDetail: FC<IPropsInfoDetail> = ({ country }) => {
     return null;
   }
 
-  console.log(country);
-
   return (
     <>
       <Box sx={{ marginRight: "20px" }}>
