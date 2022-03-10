@@ -20,18 +20,20 @@ const ListDetailSecondary = () => {
         <span className="info-list-item-static">Currencies: </span>
         <span className="info-list-item-dynamic">
           {" "}
-          {country?.currencies.map((item) => (
-            <span key={item.code}>{item.name}</span>
-          ))}
+          {country?.currencies &&
+            country?.currencies.map((item) => (
+              <span key={item.code}>{item.name}</span>
+            ))}
         </span>
       </li>
       <li>
         <span className="info-list-item-static">Languages: </span>
         <span className="info-list-item-dynamic">
           {" "}
-          {country?.languages.map((item) => (
-            <span key={item.name}>{item.name} </span>
-          ))}
+          {country?.languages &&
+            country?.languages.map((item) => (
+              <span key={item.name}>{item.name} </span>
+            ))}
         </span>
       </li>
     </ul>

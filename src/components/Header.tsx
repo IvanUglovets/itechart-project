@@ -1,20 +1,29 @@
-import React, {FC, useState} from "react";
+import React, { FC, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import SimpleModal from "./Modal";
+import SignUp from "./SignUp";
+import LogOut from "./LogOut";
+import { useAuth } from "./../hooks/useAuth";
+import LogIn from "./LogIn";
 
 const Header: FC = () => {
-  const [openLogIn,setOpenLogIn] = useState<boolean>(false)
-  const [openSignUp,setOpenSignUp] = useState<boolean>(false)
+  const { isAuth, name } = useAuth();
+
+  const [openLogIn, setOpenLogIn] = useState<boolean>(false);
+  const [openSignUp, setOpenSignUp] = useState<boolean>(false);
+  const [openLogOut, setOpenLogOut] = useState<boolean>(false);
 
   const handleOpenLogIn = () => setOpenLogIn(true);
-  const handleCloseLogIn = () => setOpenLogIn(false);
-
   const handleOpenSignUp = () => setOpenSignUp(true);
+  const handleOpenLogOut = () => setOpenLogOut(true);
+
+  const handleCloseLogIn = () => setOpenLogIn(false);
   const handleCloseSignUp = () => setOpenSignUp(false);
+  const handleCloseLogOut = () => setOpenLogOut(false);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -27,16 +36,58 @@ const Header: FC = () => {
           >
             Where in the world?
           </Typography>
-          <Button color="inherit" sx={{ color: "black" }} onClick={handleOpenLogIn}>
-            Login
-          </Button>
-          <Button color="inherit" sx={{ color: "black" }} onClick={handleOpenSignUp}>
-            Sigh up
-          </Button>
+          {isAuth ? (
+            <>
+              <Box>
+                {name && (
+                  <Typography component="span" sx={{ color: "black" }}>
+                    {name}
+                  </Typography>
+                )}
+              </Box>
+              <Button
+                color="inherit"
+                sx={{ color: "black" }}
+                onClick={handleOpenLogOut}
+              >
+                Log Out
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button
+                color="inherit"
+                sx={{ color: "black" }}
+                onClick={handleOpenLogIn}
+              >
+                Login
+              </Button>
+              <Button
+                color="inherit"
+                sx={{ color: "black" }}
+                onClick={handleOpenSignUp}
+              >
+                Sign up
+              </Button>
+            </>
+          )}
         </Toolbar>
       </AppBar>
-      <SimpleModal handleClose={handleCloseLogIn} isOpen={openLogIn}><div>LogIn</div></SimpleModal>
-      <SimpleModal handleClose={handleCloseSignUp} isOpen={openSignUp}><div>SignUp</div></SimpleModal>
+      <SimpleModal handleClose={handleCloseLogIn} isOpen={openLogIn}>
+        <LogIn
+          handleCloseLogIn={handleCloseLogIn}
+          handleOpenSignUp={handleOpenSignUp}
+        />
+      </SimpleModal>
+      <SimpleModal handleClose={handleCloseSignUp} isOpen={openSignUp}>
+        <SignUp
+          handleCloseSignUp={handleCloseSignUp}
+          handleOpenLogIn={handleOpenLogIn}
+        />
+      </SimpleModal>
+      <SimpleModal handleClose={handleCloseLogOut} isOpen={openLogOut}>
+        <LogOut handleCloseLogOut={handleCloseLogOut} />
+      </SimpleModal>
     </Box>
   );
 };

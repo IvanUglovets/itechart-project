@@ -5,6 +5,7 @@ import SearchFiltersBox from "../components/SearchFiltersBox";
 import { getAllCountrys } from "../redux/thunk/getAllCountrys";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { useAppSelector } from "../hooks/useAppSelector";
+import { ToastContainer } from "react-toastify";
 
 const Home = () => {
   const { isLoading } = useAppSelector((state) => state.countrysSlice);
@@ -30,6 +31,17 @@ const Home = () => {
           <ListCountrys />
         </Box>
       )}
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 };
