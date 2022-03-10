@@ -1,16 +1,14 @@
 import React, { useEffect } from "react";
-import { Box, buttonBaseClasses, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useAppSelector } from "../hooks/useAppSelector";
-import { filterByCode } from "./../redux/thunk/filterByCode";
-import { useAppDispatch } from "./../hooks/useAppDispatch";
+import { filterByCode } from "../redux/thunk/filterByCode";
+import { useAppDispatch } from "../hooks/useAppDispatch";
 import { useNavigate } from "react-router-dom";
 
 const LinksForCountrys = () => {
   const history = useNavigate();
   const { country } = useAppSelector((state) => state.detailCountrySlice);
   const { borders } = useAppSelector((state) => state.codeSlice);
-
-  console.log(borders);
 
   const dispatch = useAppDispatch();
 
