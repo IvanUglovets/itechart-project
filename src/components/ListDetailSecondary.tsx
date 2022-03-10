@@ -10,9 +10,10 @@ const ListDetailSecondary = () => {
         <span className="info-list-item-static">Top Level Domain: </span>
         <span className="info-list-item-dynamic">
           {" "}
-          {country?.topLevelDomain.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
+          {country?.topLevelDomain &&
+            country?.topLevelDomain.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
         </span>
       </li>
       <li>
