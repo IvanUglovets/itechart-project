@@ -1,8 +1,6 @@
 # search - countries
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+Description:
 
 This project worked with card of countries and registration and autorization. You can search countries and sort them by regions, aslo you can see detail page with information for each country. In this project used technologies such as: React + TypeScript, registration and autorization with firebase service, axios, react-hook-form, react-tostify, redux-toolkit, thunk, redux-persist for save token at the reload page, materialUI and material-icons for UI. Also this project work with API v2: [https://restcountries.com/]
 
@@ -15,6 +13,8 @@ REACT_APP_MESSAGING_SENDER_ID=475105364156
 REACT_APP_APP_ID=1:475105364156:web:94c0cbc5302b5REACT_APP
 
 In the project directory, you can run:
+
+## Available Scripts
 
 ### `npm start`
 

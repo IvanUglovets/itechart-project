@@ -37,7 +37,7 @@ const LogIn: FC<IPropsLogIn> = ({ handleCloseLogIn, handleOpenSignUp }) => {
         // Signed in
         const { email, accessToken }: any = userCredential.user;
         dispatch(setUser({ email, token: accessToken, name: "" }));
-        toast("You are logged in!");
+        toast.success("You are logged in!");
         handleCloseLogIn();
       })
       .catch((error) => {

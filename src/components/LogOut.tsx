@@ -16,7 +16,7 @@ const LogOut: FC<IPropsLogOut> = ({ handleCloseLogOut }) => {
     const auth = getAuth();
     signOut(auth)
       .then(() => {
-        toast("Log Out successful");
+        toast.success("Log Out successful");
       })
       .catch((error) => {
         toast.error(`Error: ${error.message}`);
