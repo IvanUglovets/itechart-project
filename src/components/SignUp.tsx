@@ -42,7 +42,7 @@ const SignUp: FC<IPropsSignUp> = ({ handleCloseSignUp, handleOpenLogIn }) => {
             email: user.email,
           })
         );
-        toast("Are you registered!");
+        toast.success("Are you registered!");
         handleCloseSignUp();
       })
       .catch((error) => {
@@ -79,7 +79,7 @@ const SignUp: FC<IPropsSignUp> = ({ handleCloseSignUp, handleOpenLogIn }) => {
         <Box component="div" sx={{ display: "flex", flexDirection: "column" }}>
           <Box component="div" sx={{ mb: "10px" }}>
             <TextField
-              label="name"
+              label="Name"
               variant="standard"
               autoComplete="off"
               sx={{ width: "100%" }}
@@ -106,7 +106,7 @@ const SignUp: FC<IPropsSignUp> = ({ handleCloseSignUp, handleOpenLogIn }) => {
           </Box>
           <Box component="div" sx={{ mb: "10px" }}>
             <TextField
-              label="email"
+              label="Email"
               variant="standard"
               autoComplete="off"
               sx={{ width: "100%" }}
@@ -138,7 +138,7 @@ const SignUp: FC<IPropsSignUp> = ({ handleCloseSignUp, handleOpenLogIn }) => {
           <Box component="div" sx={{ mb: "30px", width: "100%" }}>
             <TextField
               type="password"
-              label="password"
+              label="Password"
               autoComplete="off"
               variant="standard"
               sx={{ width: "100%" }}
