@@ -5,7 +5,7 @@ import { filterByCode } from "../redux/thunk/filterByCode";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { useNavigate } from "react-router-dom";
 
-const LinksForCountrys = () => {
+const LinksForCountries = () => {
   const history = useNavigate();
   const { country } = useAppSelector((state) => state.detailCountrySlice);
   const { borders } = useAppSelector((state) => state.codeSlice);
@@ -36,4 +36,4 @@ const LinksForCountrys = () => {
   );
 };
 
-export default LinksForCountrys;
+export default LinksForCountries;

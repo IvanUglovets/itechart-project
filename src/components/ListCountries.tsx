@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import CountryItem from "./CountryItem";
 import { Box } from "@mui/material";
 
-const ListCountrys: FC = () => {
+const ListCountries: FC = () => {
   const { countrysList } = useAppSelector((state) => state.countrysSlice);
   const { search } = useAppSelector((state) => state.searchSlice);
   const filteredCountrysList = countrysList.filter((country) =>
@@ -29,4 +29,4 @@ const ListCountrys: FC = () => {
   );
 };
 
-export default ListCountrys;
+export default ListCountries;

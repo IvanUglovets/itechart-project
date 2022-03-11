@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import ListCountrys from "../components/ListCountrys";
+import ListCountries from "../components/ListCountries";
 import Box from "@mui/material/Box";
 import SearchFiltersBox from "../components/SearchFiltersBox";
 import { getAllCountrys } from "../redux/thunk/getAllCountrys";
@@ -28,7 +28,7 @@ const Home = () => {
       ) : (
         <Box component="section" mt={6} sx={{ padding: "0 40px" }}>
           <SearchFiltersBox />
-          <ListCountrys />
+          <ListCountries />
         </Box>
       )}
       <ToastContainer
