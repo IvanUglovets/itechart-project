@@ -79,8 +79,7 @@ const LogIn: FC<IPropsLogIn> = ({handleCloseLogIn, handleOpenSignUp}) => {
                         {...register("email", {
                             required: "Email is required",
                             pattern: {
-                                value:
-                                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                value: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
                                 message: "Please enter a valid email",
                             },
                         })}

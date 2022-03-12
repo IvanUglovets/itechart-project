@@ -28,6 +28,8 @@ const SignUp: FC<IPropsSignUp> = ({ handleCloseSignUp, handleOpenLogIn }) => {
   } = useForm<IFormInput>();
   const dispatch = useAppDispatch();
 
+  const regExp = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+
   const onSubmit: SubmitHandler<IFormInput> = (data: IFormInput, e) => {
     e?.preventDefault();
     const auth = getAuth();
@@ -113,8 +115,7 @@ const SignUp: FC<IPropsSignUp> = ({ handleCloseSignUp, handleOpenLogIn }) => {
               {...register("email", {
                 required: "Email is required",
                 pattern: {
-                  value:
-                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                  value: regExp,
                   message: "Please enter a valid email",
                 },
               })}
