@@ -4,7 +4,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import CloseIcon from "@mui/icons-material/Close";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import { Typography, TextField, Box, Button } from "@mui/material";
-import { useAppDispatch } from "./../hooks/useAppDispatch";
+import { useAppDispatch } from "../hooks/useAppDispatch";
 import { setUser } from "../redux/slices/userSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -161,7 +161,7 @@ const SignUp: FC<IPropsSignUp> = ({ handleCloseSignUp, handleOpenLogIn }) => {
                   color: "red",
                   fontSize: "14px",
                   display: "flex",
-                  alignItems: "center",
+                  alignItems: "flex-start",
                   justifyContent: "flex-start",
                 }}
               >
