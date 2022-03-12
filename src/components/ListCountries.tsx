@@ -15,7 +15,7 @@ const ListCountries: FC = () => {
       <Grid
         container
         spacing={3}
-        columns={16}
+        columns={{ xs: 1, sm: 8, md: 16 }}
         direction="row"
         justifyContent="center"
         alignItems="center"

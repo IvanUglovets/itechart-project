@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import { RoutePaths } from "../routes/routes";
 import { Box } from "@mui/material";
-import { useAuth } from "./../hooks/useAuth";
+import { useAuth } from "../hooks/useAuth";
 import { toast } from "react-toastify";
 
 interface IPropsCountryItem {
@@ -26,7 +26,7 @@ const CountryItem: FC<IPropsCountryItem> = ({ country }) => {
   };
 
   return (
-    <Grid item xs={3}>
+    <Grid item xs={2} sm={4} md={4}>
       <Card
         sx={{ maxWidth: 350, cursor: "pointer" }}
         onClick={redirectToDetailPage}

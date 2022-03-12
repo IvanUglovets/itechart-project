@@ -11,6 +11,7 @@ const SearchFiltersBox = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+          flexWrap: "wrap"
       }}
     >
       <Search />

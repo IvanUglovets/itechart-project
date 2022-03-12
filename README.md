@@ -1,16 +1,9 @@
-# search - countries
+# Search - countries
 
-Description:
+###Description:
 
 This project worked with card of countries and registration and autorization. You can search countries and sort them by regions, aslo you can see detail page with information for each country. In this project used technologies such as: React + TypeScript, registration and autorization with firebase service, axios, react-hook-form, react-tostify, redux-toolkit, thunk, redux-persist for save token at the reload page, materialUI and material-icons for UI. Also this project work with API v2: [https://restcountries.com/]
 
-Environment variables
-REACT_APP_API_KEY=AIzaSyDuh\_\_7ABPo2lj3aNUA4U_8I9dmiBAdVdA
-REACT_APP_AUTH_DOMAIN=search-countres.firebaseapp.com
-REACT_APP_PROJECT_ID=search-countres
-REACT_APP_STORAGE_BUCKET=search-countres.appspot.com
-REACT_APP_MESSAGING_SENDER_ID=475105364156
-REACT_APP_APP_ID=1:475105364156:web:94c0cbc5302b5REACT_APP
 
 In the project directory, you can run:
 
